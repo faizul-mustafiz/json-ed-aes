@@ -1,0 +1,43 @@
+{
+  "name": "json-ed-aes-gcm",
+  "version": "1.0.0",
+  "description": "this is a npm package to encrypt any json message using aes-gcm with given secret",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./lib/test/index.js",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizul-mustafiz/json-ed-aes-gcm.git"
+  },
+  "keywords": [
+    "aes-gcm",
+    "encryption",
+    "decryption",
+    "json"
+  ],
+  "author": "faizul-mustafiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizul-mustafiz/json-ed-aes-gcm/issues"
+  },
+  "homepage": "https://github.com/faizul-mustafiz/json-ed-aes-gcm#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "prettier": "^2.8.7",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}
