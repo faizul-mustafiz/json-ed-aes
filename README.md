@@ -24,9 +24,30 @@ npm install @faizul-mustafiz/json-ed-aes
 
 ## Basic Example
 
+`Node.js Module`
+
 ```
-const JsonEncryptDecryptAES =  require('@faizul-mustafiz/json-ed-aes').default;
-const aes = new JsonEncryptDecryptAES('my-super-secret');
+const JsonEncryptDecryptAES =  require('@faizul-mustafiz/json-ed-aes');
+const aes = new JsonEncryptDecryptAES.default('my-super-secret');
+
+// Encrypt an json object
+const encryptMessage = aes.encrypt({  deviceId: '67256558250eda49',});
+
+// Decrypt an encrypted message
+const decryptMessage = aes.decrypt(encryptMessage);
+
+console.log('encryptMessage:', encryptMessage);
+// encryptMessage: HxMsz/kBD5vKP5IJvgrotFHHDfcOy0YYgZ6ukaGpTDpoJi93PXERAu8ii9m0KJWxm3AWaJnaJTD5e5Ca8wl/MDQL1vgq1Na1M3jBKu3ZMHHpoIT7krzC4pURw3pRgd9j8tQ3NSrwWzzhrIdm03bjmtfR2MgyyNBIj5saQKuMhA==
+
+console.log('decryptMessage:', decryptMessage);
+// decryptMessage: { deviceId: '67256558250eda49' }
+```
+
+`ES Module`
+
+```
+import JsonEncryptDecrypt from "@faizul-mustafiz/json-ed-aes";
+const aes = new JsonEncryptDecrypt("very-strong-secret");
 
 // Encrypt an json object
 const encryptMessage = aes.encrypt({  deviceId: '67256558250eda49',});
