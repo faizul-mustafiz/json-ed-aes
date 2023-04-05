@@ -1,7 +1,7 @@
 {
   "name": "@faizul-mustafiz/json-ed-aes-gcm",
   "version": "1.0.0",
-  "description": "this is a npm package to encrypt any json message using aes-gcm with given secret",
+  "description": "json-ed-aes-gcm is a simple aes-256-gcm encrypt and decrypt module for CommonJs and ECMAScript",
   "exports": {
     ".": {
       "import": {
@@ -13,7 +13,7 @@
         "default": "./lib/cjs/index.js"
       }
     }
-  },
+  }, 
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
   "files": [
