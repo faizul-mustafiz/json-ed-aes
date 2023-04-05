@@ -1,7 +1,7 @@
 {
-  "name": "@faizul-mustafiz/json-ed-aes-gcm",
-  "version": "1.0.0",
-  "description": "json-ed-aes-gcm is a simple aes-256-gcm encrypt and decrypt module for CommonJs and ECMAScript",
+  "name": "@faizul-mustafiz/json-ed-aes",
+  "version": "1.0.1",
+  "description": "a simple aes-256-gcm encrypt and decrypt module for node.js",
   "exports": {
     ".": {
       "import": {
@@ -24,28 +24,30 @@
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
-    "prepack": "npm run build",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.base.json",
     "test": "mocha",
-    "prepublishOnly": "npm test && npm run lint"
+    "prepublishOnly": "npm test && npm run lint",
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faizul-mustafiz/json-ed-aes-gcm.git"
+    "url": "git+https://github.com/faizul-mustafiz/json-ed-aes.git"
   },
   "keywords": [
     "aes-gcm",
+    "aes-256-gsm",
     "encryption",
     "decryption",
-    "json"
+    "json",
+    "string"
   ],
   "author": "faizul-mustafiz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/faizul-mustafiz/json-ed-aes-gcm/issues"
+    "url": "https://github.com/faizul-mustafiz/json-ed-aes/issues"
   },
-  "homepage": "https://github.com/faizul-mustafiz/json-ed-aes-gcm#readme",
+  "homepage": "https://github.com/faizul-mustafiz/json-ed-aes#readme",
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
