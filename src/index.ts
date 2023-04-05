@@ -17,7 +17,7 @@ export default class JsonEncryptDecryptAES {
 
   encrypt(payload: any) {
     const { parsedString, size } = parser.parseJsonPayload(payload);
-    if (size > 500000) return 'Json size limit exceeded';
+    if (size > 500000) return 'Payload size limit exceeded';
     const iv = crypto.randomBytes(ivLength);
     const salt = crypto.randomBytes(saltLength);
     const key = this.getKey(salt);
