@@ -1,0 +1,26 @@
+name: Publish @faizul-mustafiz/json-ed-aes
+run-name: Publishing @faizul-mustafiz/json-ed-aes package to npm registry
+on:
+  push:
+    tags:
+      - v1.*
+jobs:
+  publish-package-to-npm:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node versions ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install project dependencies
+        run: npm ci
+      - name: Publish package to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
