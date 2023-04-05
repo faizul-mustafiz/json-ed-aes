@@ -25,7 +25,7 @@ npm install @faizul-mustafiz/json-ed-aes
 ## Basic Example
 
 ```
-const JsonEncryptDecryptAES =  require('@faizul-mustafiz/json-ed-aes-gcm').default;
+const JsonEncryptDecryptAES =  require('@faizul-mustafiz/json-ed-aes').default;
 const aes = new JsonEncryptDecryptAES('my-super-secret');
 
 // Encrypt an json object
